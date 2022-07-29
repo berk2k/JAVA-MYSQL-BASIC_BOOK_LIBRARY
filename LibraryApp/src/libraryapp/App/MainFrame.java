@@ -15,10 +15,6 @@ import libraryapp.DB;
 
 
 public class MainFrame extends javax.swing.JFrame {
-
-/*    String url = "jdbc:mysql://localhost:3306/booklibrary";
-    String username = "root";
-    String password = "berkberk09";*/
     
     Connection connection = null;
     public MainFrame() {
@@ -321,19 +317,7 @@ public class MainFrame extends javax.swing.JFrame {
         return condition;
     }
     
-/*    private Connection ConnectServer(Connection connection){
-        
-        try {
-            connection = DriverManager.getConnection(url,username,password);
-            
-            System.out.println("Connected to DB");
-        } catch (SQLException ex) {
-            System.out.println("Error!");
-            Logger.getLogger(LibraryApp.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return connection;
-    }*/
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;

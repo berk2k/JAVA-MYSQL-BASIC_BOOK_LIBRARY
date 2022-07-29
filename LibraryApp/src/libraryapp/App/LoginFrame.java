@@ -17,9 +17,6 @@ import libraryapp.LibraryApp;
  */
 public class LoginFrame extends javax.swing.JFrame {
 
-/*  String url = "jdbc:mysql://localhost:3306/booklibrary";
-    String username = "root";
-    String password = "berkberk09";*/
     
     Connection connection = null;
         
@@ -141,9 +138,9 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(passLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addComponent(loginButton)
                 .addGap(18, 18, 18)
@@ -167,7 +164,7 @@ public class LoginFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-    //    connection = ConnectServer(connection);
+    
         connection = DB.ConnectServer();
         StringBuilder warning = new StringBuilder();
         String username = usernameField.getText();
@@ -190,7 +187,7 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
-    //    connection = ConnectServer(connection);
+    
         connection = (Connection) DB.ConnectServer();
         StringBuilder warning = new StringBuilder();
         String username = usernameField.getText();
@@ -225,20 +222,6 @@ public class LoginFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_signUpButtonActionPerformed
 
-/*    private Connection ConnectServer(Connection connection){
-        
-        try {
-            connection = DriverManager.getConnection(url,username,password);
-            
-            System.out.println("Connected to DB");
-        } catch (SQLException ex) {
-            System.out.println("Error!");
-            Logger.getLogger(LibraryApp.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return connection;
-    }*/
-    
     private boolean isUsernameValid(String username,Connection connection){
         
         boolean condition = true;
